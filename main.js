@@ -20,8 +20,8 @@ class Walker{
     }
 
     step(){
-        let choice = Math.floor(Math.random() * 4);
-        
+        let choice = Math.floor(Math.random() * 8);
+
         // checks if choice is valid and execute the appropriate step
         if (choice == 0 && y > 0) {
             y--;  // Move Up     
@@ -34,6 +34,26 @@ class Walker{
         }
         else if (choice == 3 && x > 0) {
             x--; // Move Left
+        }
+        else if(choice == 4 && x < canvas.width && y > 0){
+            // Move diagonally up and to the right
+            y--;
+            x++;
+        }
+        else if(choice == 5 && x < canvas.width && y < canvas.height){
+            // Move diagonally down and to the right
+            y++;
+            x++;
+        }
+        else if(choice == 6 && x < canvas.width && x > 0){
+            // Move diagonally up and to the left
+            y--;
+            x--;
+        }
+        else if(choice == 7 && x < canvas.width && y < canvas.height){
+            // Move diagonally down and to the left
+            y++;
+            x--;
         }
         else{
             console.log('The choice is: '+choice);
@@ -55,7 +75,7 @@ window.onload = function(){
     
     setInterval(() => {
         draw();
-    }, 10);
+    }, 1);
 
       
     
