@@ -21,16 +21,18 @@ class Walker{
 
     step(){
         let choice = Math.floor(Math.random() * 4);
-        if (choice == 0) {
-            y++;  // Move Up    
+        
+        // checks if choice is valid and execute the appropriate step
+        if (choice == 0 && y > 0) {
+            y--;  // Move Up     
         } 
-        else if(choice == 1) {
+        else if(choice == 1 && x < canvas.width) {
             x++; //Move right
         }
-        else if (choice == 2) {
-            y--; // Move down
+        else if (choice == 2 && y < canvas.height) {
+            y++; // Move down
         }
-        else if (choice == 3) {
+        else if (choice == 3 && x > 0) {
             x--; // Move Left
         }
         else{
@@ -53,7 +55,7 @@ window.onload = function(){
     
     setInterval(() => {
         draw();
-    }, 100);
+    }, 10);
 
       
     
