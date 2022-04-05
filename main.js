@@ -1,9 +1,9 @@
 // Canvas setup
-x = 300;
-y = 200;
+x = 200; // x-position of the walker
+y = 150; // y-position of the walker
 let canvas = document.getElementById('canvas');
-canvas.width = 600;
-canvas.height = 400;
+canvas.width = 400;
+canvas.height = 300;
 
 let ctx = canvas.getContext('2d');
 
